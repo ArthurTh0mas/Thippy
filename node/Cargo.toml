@@ -1,7 +1,11 @@
 [package]
 name = "thippy-node"
 version = "0.1.0"
-authors = ["Thippy"]
+authors = ["Annie Lai <admin@parity.io>"]
+license = "GPL-3.0-only"
+description = "A node implementation for Thippy, a Substrate chain for smart contracts."
+homepage = "https://github.com/ng8eke/thippy-node"
+repository = "https://github.com/ng8eke/thippy-node"
 build = "build.rs"
 edition = "2018"
 
@@ -32,7 +36,7 @@ sp-runtime = { git = "https://github.com/ng8eke/substrate", package = "sp-runtim
 sp-timestamp = { git = "https://github.com/ng8eke/substrate", package = "sp-timestamp" }
 
 # These dependencies are used for the node's RPCs
-jsonrpc-core = "15.1.0"
+jsonrpc-core = "18.0.0"
 sc-rpc = { git = "https://github.com/ng8eke/substrate", package = "sc-rpc" }
 sp-api = { git = "https://github.com/ng8eke/substrate", package = "sp-api" }
 sc-rpc-api = { git = "https://github.com/ng8eke/substrate", package = "sc-rpc-api" }
