@@ -3,9 +3,9 @@ name = "thippy-node"
 version = "0.1.0"
 authors = ["Annie Lai <admin@parity.io>"]
 license = "GPL-3.0-only"
-description = "A node implementation for Thippy, a Substrate chain for smart contracts."
-homepage = "https://github.com/ng8eke/thippy-node"
-repository = "https://github.com/ng8eke/thippy-node"
+description = "A node implementation for Thippy, a Substrate parachain for smart contracts."
+homepage = "https://github.com/ng8eke/thippy"
+repository = "https://github.com/ng8eke/thippy"
 build = "build.rs"
 edition = "2018"
 
