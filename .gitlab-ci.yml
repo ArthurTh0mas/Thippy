@@ -1,6 +1,6 @@
 # .gitlab-ci.yml
 #
-# thippy-node
+# thippy
 #
 # pipelines can be triggered manually in the web
 
@@ -138,22 +138,22 @@ publish:
     - echo "tag name ${TAG_NAME}"
     - tar -czvf ./thippy-linux.tar.gz ./artifacts/thippy-linux/thippy
     - tar -czvf ./thippy-mac.tar.gz ./artifacts/thippy-mac/thippy
-    - 'curl https://api.github.com/repos/ng8eke/thippy-node/releases
+    - 'curl https://api.github.com/repos/ng8eke/thippy/releases
         --fail-with-body
         -H "Cookie: logged_in=no"
         -H "Authorization: token ${GITHUB_TOKEN}"'
-    - 'curl https://api.github.com/repos/ng8eke/thippy-node/releases
+    - 'curl https://api.github.com/repos/ng8eke/thippy/releases
         --fail-with-body
         -H "Cookie: logged_in=no"
         -H "Authorization: token ${GITHUB_TOKEN}" | jq .'
-    - 'RELEASE_ID=$(curl https://api.github.com/repos/ng8eke/thippy-node/releases
+    - 'RELEASE_ID=$(curl https://api.github.com/repos/ng8eke/thippy/releases
         --fail-with-body
         -H "Cookie: logged_in=no"
         -H "Authorization: token ${GITHUB_TOKEN}"
         | jq -r ".[] | select(.tag_name == \"$TAG_NAME\") | .id");
       echo "release id if existent: ${RELEASE_ID}"'
     - 'if [ -z "$RELEASE_ID" ]; then
-        RESP=$(curl -X "POST" "https://api.github.com/repos/ng8eke/thippy-node/releases"
+        RESP=$(curl -X "POST" "https://api.github.com/repos/ng8eke/thippy/releases"
           --fail-with-body
           -H "Cookie: logged_in=no"
           -H "Authorization: token ${GITHUB_TOKEN}"
@@ -169,13 +169,13 @@ publish:
           echo "release id of created release ${RELEASE_ID}";
         fi'
     - echo "release id ${RELEASE_ID}"
-    - 'curl -X "POST" "https://uploads.github.com/repos/ng8eke/thippy-node/releases/$RELEASE_ID/assets?name=thippy-linux.tar.gz"
+    - 'curl -X "POST" "https://uploads.github.com/repos/ng8eke/thippy/releases/$RELEASE_ID/assets?name=thippy-linux.tar.gz"
         --fail-with-body
         -H "Cookie: logged_in=no"
         -H "Authorization: token ${GITHUB_TOKEN}"
         -H "Content-Type: application/octet-stream"
         --data-binary @"./thippy-linux.tar.gz"'
-    - 'curl -X "POST" "https://uploads.github.com/repos/ng8eke/thippy-node/releases/$RELEASE_ID/assets?name=thippy-mac.tar.gz"
+    - 'curl -X "POST" "https://uploads.github.com/repos/ng8eke/thippy/releases/$RELEASE_ID/assets?name=thippy-mac.tar.gz"
         --fail-with-body
         -H "Cookie: logged_in=no"
         -H "Authorization: token ${GITHUB_TOKEN}"
