@@ -289,7 +289,7 @@ fn thippy_genesis(
 				.map(|(acc, aura)| {
 					(
 						acc.clone(),               // account id
-						acc.clone(),               // validator id
+						acc,                       // validator id
 						thippy_session_keys(aura), // session keys
 					)
 				})
