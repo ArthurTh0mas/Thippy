@@ -108,6 +108,7 @@ build-linux:
     - time cargo test --release --all
     - mkdir -p ./artifacts/thippy-linux/
     - cp ${CARGO_TARGET_DIR}/release/thippy ./artifacts/thippy-linux/thippy
+    - cp ${CARGO_TARGET_DIR}/release/wbuild/thippy-runtime/thippy_runtime* ./artifacts/thippy-linux/
     - cp ./scripts/dockerfiles/thippy_injected.Dockerfile ./artifacts/thippy-linux/thippy_injected.Dockerfile
 
 ### stage:                         build-mac
