@@ -7,7 +7,7 @@ description = "A node implementation for Thippy, a Substrate parachain for smart
 homepage = "https://github.com/ng8eke/thippy"
 repository = "https://github.com/ng8eke/thippy"
 build = "build.rs"
-edition = "2018"
+edition = "2021"
 
 [package.metadata.docs.rs]
 targets = ["x86_64-unknown-linux-gnu"]
