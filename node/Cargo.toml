@@ -41,6 +41,7 @@ thippy-runtime = { path = '../runtime' }
 # Substrate Dependencies
 frame-benchmarking = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 frame-benchmarking-cli = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
+try-runtime-cli = { git = "https://github.com/ng8eke/substrate", branch = "master" }
 
 pallet-transaction-payment-rpc = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 
