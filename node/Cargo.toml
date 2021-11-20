@@ -89,6 +89,8 @@ cumulus-client-network = { git = 'https://github.com/ng8eke/cumulus', branch = "
 cumulus-client-service = { git = 'https://github.com/ng8eke/cumulus', branch = "master" }
 cumulus-primitives-core = { git = 'https://github.com/ng8eke/cumulus', branch = "master" }
 cumulus-primitives-parachain-inherent = { git = 'https://github.com/ng8eke/cumulus', branch = "master" }
+cumulus-relay-chain-interface = { git = 'https://github.com/ng8eke/cumulus', branch = "master" }
+cumulus-relay-chain-local = { git = 'https://github.com/ng8eke/cumulus', branch = "master" }
 
 # Polkadot dependencies
 polkadot-cli = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
