@@ -1,6 +1,6 @@
 [package]
 name = "thippy-runtime"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Annie Lai <admin@parity.io>"]
 license = "GPL-3.0-only"
 edition = "2021"

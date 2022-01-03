@@ -1,6 +1,6 @@
 [package]
 name = "thippy-node"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Annie Lai <admin@parity.io>"]
 license = "GPL-3.0-only"
 description = "A node implementation for Thippy, a Substrate parachain for smart contracts."
@@ -23,12 +23,13 @@ path = 'src/main.rs'
 [features]
 runtime-benchmarks = ['thippy-runtime/runtime-benchmarks']
 contracts-unstable-interface = ['thippy-runtime/contracts-unstable-interface']
+try-runtime = ["thippy-runtime/try-runtime"]
 
 [dependencies]
+clap = { version = "3.0", features = ["derive"] }
 derive_more = '0.99.2'
 log = '0.4.14'
 codec = { package = 'parity-scale-codec', version = '2.0.0' }
-structopt = '0.3.8'
 serde = { version = '1.0.119', features = ['derive'] }
 hex-literal = "0.3.1"
 
@@ -59,7 +60,7 @@ sc-network = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 sc-keystore = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 sc-rpc = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 sc-rpc-api = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
-sc-service = { git = 'https://github.com/ng8eke/substrate', features = ['wasmtime'] , branch = "master" }
+sc-service = { git = 'https://github.com/ng8eke/substrate', features = ['wasmtime'], branch = "master" }
 sc-telemetry = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 sc-transaction-pool = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
 sc-transaction-pool-api = { git = 'https://github.com/ng8eke/substrate', branch = "master" }
@@ -97,6 +98,7 @@ polkadot-cli = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
 polkadot-parachain = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
 polkadot-primitives = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
 polkadot-service = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
+xcm = { git = "https://github.com/ng8eke/polkadot", default-features = false, branch = "master" }
 polkadot-test-service = { git = 'https://github.com/ng8eke/polkadot', branch = "master" }
 
 # Contracts specific packages
